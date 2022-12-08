@@ -25,7 +25,7 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Blend
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -65,17 +65,17 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 7548173667280573856}
-    m_Position: {x: 400, y: 140, z: 0}
+    m_Position: {x: 410, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -929377827294897004}
-    m_Position: {x: 330, y: 20, z: 0}
+    m_Position: {x: 390, y: 20, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 30, z: 0}
-  m_EntryPosition: {x: 30, y: 190, z: 0}
+  m_AnyStatePosition: {x: 140, y: 50, z: 0}
+  m_EntryPosition: {x: 80, y: 170, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7548173667280573856}
