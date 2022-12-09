@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float Speed = 1;
     private Rigidbody2D _enemyRb;
     private GameObject _player;
+    public Rigidbody2D _myrigidbody;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,17 @@ public class Enemy : MonoBehaviour
         Vector2 lookDirection = (_player.transform.position - transform.position).normalized;
 
         _enemyRb.AddForce(lookDirection * Speed);
+
+        FlipSprite();
+    }
+
+    void FlipSprite()
+    {
+        bool enemyHasHorizontalSpeed = Mathf.Abs(_myrigidbody.velocity.x) > Mathf.Epsilon;
+        
+        if (enemyHasHorizontalSpeed)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(_myrigidbody.velocity.x), 1f);
+        }
     }
 }

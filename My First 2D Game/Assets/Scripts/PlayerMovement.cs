@@ -6,11 +6,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 5;
     private Rigidbody2D _myrigidbody;
+    private Animator _myanim;
 
     // Start is called before the first frame update
     void Start()
     {
         _myrigidbody = GetComponent<Rigidbody2D>();
+        _myanim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,9 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FlipSprite()
     {
-        bool ploayerHasHorizontalSpeed = Mathf.Abs(_myrigidbody.velocity.x) > Mathf.Epsilon;
+        bool playerHasHorizontalSpeed = Mathf.Abs(_myrigidbody.velocity.x) > Mathf.Epsilon;
         
-        if (ploayerHasHorizontalSpeed)
+        if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(_myrigidbody.velocity.x), 1f);
         }
@@ -37,5 +39,18 @@ public class PlayerMovement : MonoBehaviour
 
          FlipSprite();
         _myrigidbody.velocity = new Vector2(horizontalInput * Speed, verticalInput * Speed);
+
+         bool playerHasHorizontalSpeed = Mathf.Abs(_myrigidbody.velocity.x) > Mathf.Epsilon;
+
+         bool playerHasVerticalSpeed = Mathf.Abs(_myrigidbody.velocity.x) > Mathf.Epsilon;
+
+        if(playerHasHorizontalSpeed || playerHasVerticalSpeed)
+        {
+            _myanim.SetBool("Is Moving", true);
+        }
+        else
+        {
+            _myanim.SetBool("Is Moving", false);
+        }
     }
 }
