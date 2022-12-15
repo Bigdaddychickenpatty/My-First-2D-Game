@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 5;
+    public GameObject projectilePrefab;
     private Rigidbody2D _myrigidbody;
     private Animator _myanim;
 
@@ -20,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     {
        Playermovement();
        FlipSprite(); 
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
     }
 
     void FlipSprite()
@@ -51,6 +57,14 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _myanim.SetBool("Is Moving", false);
+        }
+    }
+
+        private void OnCollisionEnter2D(Collision2D other)
+    {
+       if(other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
         }
     }
 }
