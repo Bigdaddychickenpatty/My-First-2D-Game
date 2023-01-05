@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public bool IsGameActive;
     public Button RestartButton;
@@ -16,16 +16,22 @@ public class GameOver : MonoBehaviour
     {
         IsGameActive = false;
     }
-      public void Gameover()
+    
+public void StartGame()
+{
+     IsGameActive = true;
+}
+  public void Gameover()
     {
         IsGameActive = false;
         GameOverText.gameObject.SetActive(true);
         RestartButton.gameObject.SetActive(true);
     }
-public void StartGame()
-{
-     IsGameActive = true;
-}
+ public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -35,4 +35,9 @@ public class Enemy : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(_myrigidbody.velocity.x), 1f);
         }
     }
+
+    public void Gameover()
+    {
+
+    }
 }
