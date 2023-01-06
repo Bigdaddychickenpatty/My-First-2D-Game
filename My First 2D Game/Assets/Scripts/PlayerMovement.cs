@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectilePrefab;
     private Rigidbody2D _myrigidbody;
     private Animator _myanim;
+    private GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         _myrigidbody = GetComponent<Rigidbody2D>();
         _myanim = GetComponent<Animator>();
+         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -65,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
        if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
+            _gameManager.Gameover();
         }
     }
+
 }
