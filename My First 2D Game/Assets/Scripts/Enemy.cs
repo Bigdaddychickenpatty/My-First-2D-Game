@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D _enemyRb;
     private GameObject _player;
     public Rigidbody2D _myrigidbody;
+    public int PointValue = 1;
+
+    private GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -40,5 +43,11 @@ public class Enemy : MonoBehaviour
     {
 
     }
-    
+     private void OnEnemyDeath()
+    {
+        Debug.Log("Was Hit " + gameObject.name);
+        _gameManager.UpdateScore(PointValue);
+        Destroy(this.gameObject);
+    }
+
     }

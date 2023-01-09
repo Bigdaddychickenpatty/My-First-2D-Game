@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     public bool IsGameActive;
     public Button RestartButton;
     public TextMeshProUGUI GameOverText;
+    public int Score = 0;
+    public TextMeshProUGUI ScoreText;
+    public int PointValue = 1;
+
+    private GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +24,9 @@ public class GameManager : MonoBehaviour
     
 public void StartGame()
 {
-     IsGameActive = true;
+    ScoreText.gameObject.SetActive(true); 
+    IsGameActive = true;
+    ScoreText.text = "Score: " + Score;
 }
   public void Gameover()
     {
@@ -36,5 +43,12 @@ public void StartGame()
     void Update()
     {
         
+    }
+
+      public void UpdateScore(int addToScore)
+    {
+        Score += addToScore;
+        Debug.Log("Score: " + Score.ToString());
+        ScoreText.text = "Score: " + Score.ToString();
     }
 }
