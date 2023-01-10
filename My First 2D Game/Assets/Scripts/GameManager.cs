@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public bool IsGameActive;
     public Button RestartButton;
     public TextMeshProUGUI GameOverText;
+    public float SpawnRate = 1f;
     public int Score = 0;
     public TextMeshProUGUI ScoreText;
     public int PointValue = 1;
+    public List<GameObject> Enemy;
 
     private GameManager _gameManager;
 
@@ -51,4 +53,5 @@ public void StartGame()
         Debug.Log("Score: " + Score.ToString());
         ScoreText.text = "Score: " + Score.ToString();
     }
+
 }

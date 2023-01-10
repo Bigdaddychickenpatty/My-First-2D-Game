@@ -155,9 +155,11 @@ MonoBehaviour:
   IsGameActive: 1
   RestartButton: {fileID: 1998315441}
   GameOverText: {fileID: 961999418}
+  SpawnRate: 1
   Score: 0
   ScoreText: {fileID: 358273156}
   PointValue: 1
+  Enemy: []
 --- !u!4 &61347425
 Transform:
   m_ObjectHideFlags: 0
