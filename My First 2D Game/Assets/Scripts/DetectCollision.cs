@@ -12,6 +12,7 @@ public class DetectCollision : MonoBehaviour
     {
         Destroy(other.gameObject);
         Destroy(this.gameObject);
+        Debug.Log("Was Hit");
     }
 }
 

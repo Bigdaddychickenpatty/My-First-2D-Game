@@ -159,7 +159,8 @@ MonoBehaviour:
   Score: 0
   ScoreText: {fileID: 358273156}
   PointValue: 1
-  Enemy: []
+  Enemy:
+  - {fileID: 1450305976072084132, guid: 4f8bc0953669006419b12c4987ae2b1a, type: 3}
 --- !u!4 &61347425
 Transform:
   m_ObjectHideFlags: 0
