@@ -26,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Vector2 SpawnPos = new Vector2(transform.position.x + 0.75f, transform.position.y + 0.75f);
+             Instantiate(projectilePrefab, SpawnPos, projectilePrefab.transform.rotation);
         }
     }
 
@@ -62,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnTriggerEnter2D(Collider2D other)
     {
        if(other.gameObject.CompareTag("Enemy"))
         {

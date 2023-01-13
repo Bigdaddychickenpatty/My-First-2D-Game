@@ -10,9 +10,11 @@ public class DetectCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
-        Destroy(this.gameObject);
-        Debug.Log("Was Hit");
+        if(other.gameObject.CompareTag("Player"))
+        {
+            //Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 }
 

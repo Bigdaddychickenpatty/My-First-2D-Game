@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Throwing Knife
+  - Potion
   layers:
   - Default
   - TransparentFX
