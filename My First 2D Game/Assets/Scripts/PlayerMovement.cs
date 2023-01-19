@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Vector2 SpawnPos = new Vector2(transform.position.x + 0.75f, transform.position.y + 0.75f);
+            Vector2 SpawnPos = new Vector2(transform.position.x + 0f, transform.position.y + 0f);
              Instantiate(projectilePrefab, SpawnPos, projectilePrefab.transform.rotation);
         }
     }
